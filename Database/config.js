@@ -18,7 +18,7 @@ async function initializeDatabase() {
             CREATE TABLE IF NOT EXISTS group_settings (
                 jid TEXT PRIMARY KEY,
                 antidelete BOOLEAN DEFAULT true,
-                gcpresence BOOLEAN DEFAULT false,  -- Changed to false by default
+                gcpresence BOOLEAN DEFAULT false,
                 events BOOLEAN DEFAULT false,
                 antidemote BOOLEAN DEFAULT false,
                 antipromote BOOLEAN DEFAULT false
@@ -43,8 +43,8 @@ async function initializeDatabase() {
 
         const defaultSettings = {
             prefix: '.',
-            packname: 'DAVE-XD',
-            mode: 'publiv',
+            packname: 'Toxic-MD',
+            mode: 'public',
             presence: 'online',
             autoview: 'true',
             autolike: 'false',
@@ -52,9 +52,11 @@ async function initializeDatabase() {
             autobio: 'false',
             anticall: 'false',
             chatbotpm: 'false',
-            autolikeemoji: '💚',
-            antilink: 'false',
-            antidelete: 'false'
+            autolikeemoji: '❤️',
+            antilink: 'off',
+            antidelete: 'false',
+            antistatusmention: 'delete',
+            startmessage: 'true'
         };
 
         for (const [key, value] of Object.entries(defaultSettings)) {
@@ -76,7 +78,9 @@ async function getSettings() {
         const res = await pool.query("SELECT key, value FROM settings");
         const settings = {};
         res.rows.forEach(row => {
-            settings[row.key] = row.value === 'true' ? true : row.value === 'false' ? false : row.value;
+            if (row.value === 'true') settings[row.key] = true;
+            else if (row.value === 'false') settings[row.key] = false;
+            else settings[row.key] = row.value;
         });
         return settings;
     } catch (error) {
@@ -112,10 +116,9 @@ async function getGroupSettings(jid) {
                 antipromote: res.rows[0].antipromote
             };
         }
-        // Fallback to global settings if no group-specific settings
         return {
             antidelete: globalSettings.antidelete || true,
-            gcpresence: false,  // Changed to false by default
+            gcpresence: false,
             events: false,
             antidemote: false,
             antipromote: false
