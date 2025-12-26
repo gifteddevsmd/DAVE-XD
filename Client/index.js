@@ -71,7 +71,7 @@ console.log(' Starting WhatsApp Bot...');
   const client = toxicConnect({
     printQRInTerminal: false,
     syncFullHistory: true,
-    markOnlineOnConnect: false,
+    markOnlineOnConnect: true,
     connectTimeoutMs: 60000,
     defaultQueryTimeoutMs: 0,
     keepAliveIntervalMs: 10000,
@@ -98,13 +98,12 @@ console.log(' Starting WhatsApp Bot...');
       return message;
     },
     version: version,
-    browser: ["Ubuntu", "Chrome", "125"],
+    browser: ["Ubuntu", "Chrome", "20.0.04"],
     logger: pino({ level: 'silent' }),
     auth: {
-      creds: state.creds,
-      keys: makeCacheableSignalKeyStore(state.keys, pino().child({ level: 'silent', stream: 'store' })),
-    }
-  });
+            creds: state.creds,
+            keys: makeCacheableSignalKeyStore(state.keys, pino({ level: "fatal" }).child({ level: "fatal" })),
+        },
 
   store.bind(client.ev);
 
