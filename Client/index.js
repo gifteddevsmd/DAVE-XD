@@ -50,6 +50,8 @@ const antilink = require('../Functions/antilink');
 const antistatusmention = require('../Functions/antistatusmention');
 
 async function startToxic() {
+console.log(' Starting WhatsApp Bot...');
+    isConnecting = true;
   let settingss = await getSettings();
   if (!settingss) {
     console.log(
