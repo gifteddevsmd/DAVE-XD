@@ -249,7 +249,7 @@ async function startToxic() {
     if (!client.public && !mek.key.fromMe && messages.type === "notify") return;
 
     m = smsg(client, mek, store);
-    require("./toxic")(client, m, { type: "notify" }, store);
+    require("./dave")(client, m, { type: "notify" }, store);
   });
 
   client.ev.on("messages.upsert", async ({ messages }) => {
