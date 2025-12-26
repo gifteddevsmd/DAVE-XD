@@ -26,7 +26,7 @@ const port = process.env.PORT || 10000;
 const _ = require("lodash");
 const PhoneNumber = require("awesome-phonenumber");
 const { imageToWebp, videoToWebp, writeExifImg, writeExifVid } = require('../lib/exif');
-const { isUrl, generateMessageTag, getBuffer, getSizeMedia, fetchJson, await, sleep } = require('../lib/botFunctions');
+const { isUrl, generateMessageTag, getBuffer, getSizeMedia, fetchJson, sleep } = require('../lib/botFunctions'); // Removed 'await' from imports
 const store = makeInMemoryStore({ logger: pino().child({ level: "silent", stream: "store" }) });
 
 const authenticationn = require('../Auth/auth.js');
@@ -50,8 +50,8 @@ const antilink = require('../Functions/antilink');
 const antistatusmention = require('../Functions/antistatusmention');
 
 async function startToxic() {
-console.log(' Starting WhatsApp Bot...');
-    isConnecting = true;
+  console.log(' Starting WhatsApp Bot...');
+  let isConnecting = true;
   let settingss = await getSettings();
   if (!settingss) {
     console.log(
@@ -101,9 +101,10 @@ console.log(' Starting WhatsApp Bot...');
     browser: ["Ubuntu", "Chrome", "20.0.04"],
     logger: pino({ level: 'silent' }),
     auth: {
-            creds: state.creds,
-            keys: makeCacheableSignalKeyStore(state.keys, pino({ level: "fatal" }).child({ level: "fatal" })),
-        },
+      creds: state.creds,
+      keys: makeCacheableSignalKeyStore(state.keys, pino({ level: "fatal" }).child({ level: "fatal" })),
+    },
+  }); // Fixed: Added closing parenthesis and brace
 
   store.bind(client.ev);
 
@@ -115,8 +116,8 @@ console.log(' Starting WhatsApp Bot...');
     setInterval(() => {
       const date = new Date();
       client.updateProfileStatus(
-        `\( {botname} 𝐢𝐬 𝐚𝐜𝐭𝐢𝐯𝐞 𝟐𝟒/𝟕\n\n \){date.toLocaleString('en-US', { timeZone: 'Africa/Nairobi' })} 𝐈𝐭'𝐬 𝐚 ${date.toLocaleString('en-US', { weekday: 'long', timeZone: 'Africa/Nairobi' })}.`
-      );
+        `${botname} 𝐢𝐬 𝐚𝐜𝐭𝐢𝐯𝐞 𝟐𝟒/𝟕\n\n${date.toLocaleString('en-US', { timeZone: 'Africa/Nairobi' })} 𝐈𝐭'𝐬 𝐚 ${date.toLocaleString('en-US', { weekday: 'long', timeZone: 'Africa/Nairobi' })}.`
+      ); // Fixed template literal
     }, 10 * 1000);
   }
 
@@ -194,7 +195,7 @@ console.log(' Starting WhatsApp Bot...');
 
     if (autoview && mek.key.remoteJid === "status@broadcast") {
       const statusSender = mek.key.participant;
-      const statusKey = `\( {statusSender}: \){mek.key.id}`;
+      const statusKey = `${statusSender}:${mek.key.id}`; // Fixed template literal
 
       if (!processedStatusMessages.has(statusKey)) {
         processedStatusMessages.add(statusKey);
@@ -205,13 +206,13 @@ console.log(' Starting WhatsApp Bot...');
           setTimeout(async () => {
             try {
               await client.readMessages([mek.key]);
-            } catch (error) {}
+            } catch (error) { }
           }, 500);
 
           setTimeout(async () => {
             try {
               await client.readMessages([mek.key]);
-            } catch (error) {}
+            } catch (error) { }
           }, 1000);
 
           if (processedStatusMessages.size > 1000) {
@@ -228,7 +229,7 @@ console.log(' Starting WhatsApp Bot...');
     if (mek.key.remoteJid === "status@broadcast") {
       try {
         await client.sendReadReceipt(mek.key.remoteJid, mek.key.participant, [mek.key.id]);
-      } catch (error) {}
+      } catch (error) { }
     }
     else if (autoread && remoteJid.endsWith('@s.whatsapp.net')) {
       await client.readMessages([mek.key]);
@@ -390,7 +391,7 @@ console.log(' Starting WhatsApp Bot...');
     await fs.writeFileSync(trueFileName, buffer);
     return trueFileName;
   };
-}
+} // Closing brace for startToxic function
 
 app.use(express.static('public'));
 
