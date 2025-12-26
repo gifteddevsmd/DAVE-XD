@@ -4,7 +4,7 @@ const { default: toxicConnect, DisconnectReason } = require("@whiskeysockets/bai
 const { getSettings, getSudoUsers, addSudoUser } = require("../Database/config");
 const { commands, totalCommands } = require("../Handler/commandHandler");
 
-const botName = process.env.BOTNAME || "Toxic-MD";
+const botName = process.env.BOTNAME || "Venom-X";
 let hasSentStartMessage = false;
 let hasFollowedNewsletter = false;
 
