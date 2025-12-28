@@ -63,7 +63,7 @@ module.exports = toxic = async (client, m, chatUpdate, store) => {
         const bannedUsers = await getBannedUsers();
         let settings = await getSettings();
         if (!settings) {
-            console.error("Toxic-MD: Settings not found, cannot proceed!");
+            console.error("Venom-x: Settings not found, cannot proceed!");
             return;
         }
 
