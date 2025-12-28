@@ -12,7 +12,7 @@ module.exports = {
 
         await client.sendMessage(m.chat, { react: { text: '🤖', key: m.key } });
 
-        const xhClintonPaths = [
+        const giftdavePaths = [
             path.join(__dirname, 'gift_dave'),
             path.join(process.cwd(), 'gitf_dave'),
             path.join(__dirname, '..', 'gift_dave')
