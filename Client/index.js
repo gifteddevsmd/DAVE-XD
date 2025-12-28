@@ -9,7 +9,9 @@ const {
   proto,
   getContentType,
   makeCacheableSignalKeyStore,
-  Browsers
+  Browsers,
+  generateWAMessageContent,
+  generateWAMessageFromContent
 } = require("@whiskeysockets/baileys");
 
 const pino = require("pino");
@@ -26,7 +28,7 @@ const port = process.env.PORT || 10000;
 const _ = require("lodash");
 const PhoneNumber = require("awesome-phonenumber");
 const { imageToWebp, videoToWebp, writeExifImg, writeExifVid } = require('../lib/exif');
-const { isUrl, generateMessageTag, getBuffer, getSizeMedia, fetchJson, sleep } = require('../lib/botFunctions'); // Removed 'await' from imports
+const { isUrl, generateMessageTag, getBuffer, getSizeMedia, fetchJson, await, sleep } = require('../lib/botFunctions');
 const store = makeInMemoryStore({ logger: pino().child({ level: "silent", stream: "store" }) });
 
 const authenticationn = require('../Auth/auth.js');
@@ -49,14 +51,30 @@ const antidelete = require('../Functions/antidelete');
 const antilink = require('../Functions/antilink');
 const antistatusmention = require('../Functions/antistatusmention');
 
+async function handleButtons(client, msg) {
+  try {
+    if (!msg.message?.interactiveMessage?.nativeFlowMessage?.buttons) return;
+
+    const button = msg.message.interactiveMessage.nativeFlowMessage.buttons[0];
+    if (!button) return;
+
+    const params = JSON.parse(button.buttonParamsJson);
+
+    if (params.copy_code) {
+      await client.sendMessage(msg.key.remoteJid, {
+        text: `✅ Image URL copied to clipboard!\n\n${params.copy_code}\n\nYou can paste it anywhere now.`
+      }, { quoted: msg });
+    }
+
+  } catch (error) {}
+}
+
 async function startToxic() {
-  console.log(' Starting WhatsApp Bot...');
-  let isConnecting = true;
   let settingss = await getSettings();
   if (!settingss) {
     console.log(
       `◈━━━━━━━━━━━━━━━━◈\n` +
-      `│❒ TOXIC-MD FAILED TO CONNECT 😵\n` +
+      `│❒ Venomx failed to connect\n` +
       `│❒ Settings not found\n` +
       `┗━━━━━━━━━━━━━━━┛`
     );
@@ -71,7 +89,7 @@ async function startToxic() {
   const client = toxicConnect({
     printQRInTerminal: false,
     syncFullHistory: true,
-    markOnlineOnConnect: true,
+    markOnlineOnConnect: false,
     connectTimeoutMs: 60000,
     defaultQueryTimeoutMs: 0,
     keepAliveIntervalMs: 10000,
@@ -98,13 +116,13 @@ async function startToxic() {
       return message;
     },
     version: version,
-    browser: ["Ubuntu", "Chrome", "20.0.04"],
+    browser: ["Ubuntu", "Chrome", "125"],
     logger: pino({ level: 'silent' }),
     auth: {
       creds: state.creds,
-      keys: makeCacheableSignalKeyStore(state.keys, pino({ level: "fatal" }).child({ level: "fatal" })),
-    },
-  }); // Fixed: Added closing parenthesis and brace
+      keys: makeCacheableSignalKeyStore(state.keys, pino().child({ level: 'silent', stream: 'store' })),
+    }
+  });
 
   store.bind(client.ev);
 
@@ -117,7 +135,7 @@ async function startToxic() {
       const date = new Date();
       client.updateProfileStatus(
         `${botname} 𝐢𝐬 𝐚𝐜𝐭𝐢𝐯𝐞 𝟐𝟒/𝟕\n\n${date.toLocaleString('en-US', { timeZone: 'Africa/Nairobi' })} 𝐈𝐭'𝐬 𝐚 ${date.toLocaleString('en-US', { weekday: 'long', timeZone: 'Africa/Nairobi' })}.`
-      ); // Fixed template literal
+      );
     }, 10 * 1000);
   }
 
@@ -169,7 +187,7 @@ async function startToxic() {
 
   const processedStatusMessages = new Set();
 
-  client.ev.on("messages.upsert", async ({ messages }) => {
+  client.ev.on("messages.upsert", async ({ messages, type }) => {
     let settings = await getSettings();
     if (!settings) return;
 
@@ -186,52 +204,40 @@ async function startToxic() {
 
     await antilink(client, mek, store);
 
-    if (autolike && mek.key && mek.key.remoteJid === "status@broadcast") {
+    if (autolike && remoteJid === "status@broadcast") {
       const nickk = await client.decodeJid(client.user.id);
       const emojis = ['🗿', '⌚️', '💠', '👣', '🥲', '💔', '🤍', '❤️‍🔥', '💣', '🧠', '🦅', '🌻', '🧊', '🛑', '🧸', '👑', '📍', '😅', '🎭', '🎉', '😳', '💯', '🔥', '💫', '👽', '💗', '❤️‍🔥', '🥀', '👀', '🙌', '🙆', '🌟', '💧', '🦄', '🟢', '🎎', '✅', '🥱', '🌚', '💚', '💕', '😉', '😔'];
       const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
-      await client.sendMessage(mek.key.remoteJid, { react: { text: randomEmoji, key: mek.key } }, { statusJidList: [mek.key.participant, nickk] });
+      await client.sendMessage(remoteJid, { react: { text: randomEmoji, key: mek.key } });
     }
 
-    if (autoview && mek.key.remoteJid === "status@broadcast") {
-      const statusSender = mek.key.participant;
-      const statusKey = `${statusSender}:${mek.key.id}`; // Fixed template literal
-
-      if (!processedStatusMessages.has(statusKey)) {
-        processedStatusMessages.add(statusKey);
-
-        try {
-          await client.readMessages([mek.key]);
-
-          setTimeout(async () => {
-            try {
-              await client.readMessages([mek.key]);
-            } catch (error) { }
-          }, 500);
-
-          setTimeout(async () => {
-            try {
-              await client.readMessages([mek.key]);
-            } catch (error) { }
-          }, 1000);
+    if (autoview && remoteJid === "status@broadcast") {
+      try {
+        const statusKey = mek.key.id;
+        if (!processedStatusMessages.has(statusKey)) {
+          processedStatusMessages.add(statusKey);
+          
+          const participant = mek.key.participant || sender;
+          if (participant && participant !== client.decodeJid(client.user.id)) {
+            await client.readMessages([mek.key]);
+            
+            setTimeout(async () => {
+              try {
+                await client.readMessages([mek.key]);
+              } catch (error) {}
+            }, 500);
+          }
 
           if (processedStatusMessages.size > 1000) {
             const recentKeys = Array.from(processedStatusMessages).slice(-500);
             processedStatusMessages.clear();
             recentKeys.forEach(key => processedStatusMessages.add(key));
           }
-        } catch (error) {
-          processedStatusMessages.delete(statusKey);
         }
-      }
+      } catch (error) {}
     }
 
-    if (mek.key.remoteJid === "status@broadcast") {
-      try {
-        await client.sendReadReceipt(mek.key.remoteJid, mek.key.participant, [mek.key.id]);
-      } catch (error) { }
-    }
-    else if (autoread && remoteJid.endsWith('@s.whatsapp.net')) {
+    if (autoread && remoteJid.endsWith('@s.whatsapp.net')) {
       await client.readMessages([mek.key]);
     }
 
@@ -248,15 +254,17 @@ async function startToxic() {
       }
     }
 
-    if (!client.public && !mek.key.fromMe && messages.type === "notify") return;
+    if (!client.public && !mek.key.fromMe && type === "notify") return;
 
     m = smsg(client, mek, store);
-    require("./dave")(client, m, { type: "notify" }, store);
+    require("./dave")(client, m, { type }, store);
   });
 
   client.ev.on("messages.upsert", async ({ messages }) => {
     const msg = messages[0];
     if (!msg.message) return;
+
+    await handleButtons(client, msg);
 
     if (msg.message.listResponseMessage) {
       const selectedCmd = msg.message.listResponseMessage.singleSelectReply.selectedRowId;
@@ -284,6 +292,23 @@ async function startToxic() {
         require("./dave")(client, m, { type: "notify" }, store);
       } catch (error) {
         console.error('Error processing list selection:', error);
+      }
+    }
+  });
+
+  client.ev.on("messages.update", async (updates) => {
+    for (const update of updates) {
+      if (update.key && update.key.remoteJid === "status@broadcast" && update.update.messageStubType === 1) {
+        const settings = await getSettings();
+        if (settings.autoview) {
+          try {
+            const mek = {
+              key: update.key,
+              message: {}
+            };
+            await client.readMessages([mek.key]);
+          } catch (error) {}
+        }
       }
     }
   });
@@ -391,7 +416,7 @@ async function startToxic() {
     await fs.writeFileSync(trueFileName, buffer);
     return trueFileName;
   };
-} // Closing brace for startToxic function
+}
 
 app.use(express.static('public'));
 
