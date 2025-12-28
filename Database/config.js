@@ -54,7 +54,7 @@ async function initializeDatabase() {
             chatbotpm: 'false',
             autolikeemoji: '❤️',
             antilink: 'off',
-            antidelete: 'true',
+            antidelete: 'false',
             antistatusmention: 'delete',
             startmessage: 'true'
         };
