@@ -148,12 +148,12 @@ function smsg(conn, m, store) {
         text: text,
         contextInfo: {
           externalAdReply: {
-            title: `Toxic-MD`,
+            title: `Venom-x`,
             body: m.pushName,
             previewType: "PHOTO",
-            thumbnailUrl: "https://github.com/xhclintohn/Toxic-MD",
+            thumbnailUrl: "https://github.com/gifteddevsmd/DAVE-XD",
             thumbnail: kali,
-            sourceUrl: "https://github.com/xhclintohn/Toxic-MD",
+            sourceUrl: "https://github.com/gifteddevsmd/DAVE-XD",
           },
         },
       },
