@@ -1,69 +1,96 @@
 const fs = require('fs');
 const path = require('path');
+const { generateWAMessageFromContent } = require('@whiskeysockets/baileys');
+const { getSettings } = require('../../Database/config');
 
-module.exports = async (context) => {
-  const { client, m, prefix } = context;
+module.exports = {
+    name: 'start',
+    aliases: ['alive', 'online', 'dave'],
+    description: 'Check if bot is alive',
+    run: async (context) => {
+        const { client, m, mode, pict, botname, text, prefix } = context;
 
-  const toFancyFont = (text, isUpperCase = false) => {
-    const fonts = {
-      'A': '𝘼', 'B': '𝘽', 'C': '𝘾', 'D': '𝘿', 'E': '𝙀', 'F': '𝙁', 'G': '𝙂', 'H': '𝙃', 'I': '𝙄', 'J': '𝙅', 'K': '𝙆', 'L': '𝙇', 'M': '𝙈',
-      'N': '𝙉', 'O': '𝙊', 'P': '𝙋', 'Q': '𝙌', 'R': '𝙍', 'S': '𝙎', 'T': '𝙏', 'U': '𝙐', 'V': '𝙑', 'W': '𝙒', 'X': '𝙓', 'Y': '𝙔', 'Z': '𝙕',
-      'a': '𝙖', 'b': '𝙗', 'c': '𝙘', 'd': '𝙙', 'e': '𝙚', 'f': '𝙛', 'g': '𝙜', 'h': '𝙝', 'i': '𝙞', 'j': '𝙟', 'k': '𝙠', 'l': '𝙡', 'm': '𝙢',
-      'n': '𝙣', 'o': '𝙤', 'p': '𝙥', 'q': '𝙦', 'r': '𝙧', 's': '𝙨', 't': '𝙩', 'u': '𝙪', 'v': '𝙫', 'w': '𝙬', 'x': '𝙭', 'y': '𝙮', 'z': '𝙯'
-    };
-    return (isUpperCase ? text.toUpperCase() : text.toLowerCase())
-      .split('')
-      .map(char => fonts[char] || char)
-      .join('');
-  };
+        await client.sendMessage(m.chat, { react: { text: '🤖', key: m.key } });
 
-  try {
-    const possibleAudioPaths = [
-      path.join(__dirname, 'gift_dave', 'bot.mp3'),
-      path.join(process.cwd(), 'gift_dave', 'bot.mp3'),
-      path.join(__dirname, '..', 'gift_dave', 'bot.mp3')
-    ];
+        const xhClintonPaths = [
+            path.join(__dirname, 'gift_dave'),
+            path.join(process.cwd(), 'gitf_dave'),
+            path.join(__dirname, '..', 'gift_dave')
+        ];
 
-    let audioPath = null;
-    for (const possiblePath of possibleAudioPaths) {
-      if (fs.existsSync(possiblePath)) {
-        audioPath = possiblePath;
-        break;
-      }
-    }
+        let audioFolder = null;
+        for (const folderPath of xhClintonPaths) {
+            if (fs.existsSync(folderPath)) {
+                audioFolder = folderPath;
+                break;
+            }
+        }
 
-    if (!audioPath) {
-      console.error('❌ Audio file not found at any paths:', possibleAudioPaths);
-      return client.sendMessage(m.chat, {
-        text: `◈━━━━━━━━━━━━━━━━◈\n│❒ Yo, ${m.pushName}, where the fuck is bot.mp3? File’s missing, moron. 😡`
-      }, { quoted: m });
-    }
+        if (audioFolder) {
+            const possibleFiles = [];
+            for (let i = 1; i <= 10; i++) {
+                const fileName = `menu${i}`;
+                const audioExtensions = ['.mp3', '.m4a', '.ogg', '.opus', '.wav'];
+                
+                for (const ext of audioExtensions) {
+                    const fullPath = path.join(audioFolder, fileName + ext);
+                    if (fs.existsSync(fullPath)) {
+                        possibleFiles.push(fullPath);
+                    }
+                }
+            }
 
-    console.log(`✅ Found audio at ${audioPath}`);
-    // Send audio as voice note
-    await client.sendMessage(m.chat, {
-      audio: { url: audioPath },
-      ptt: true,
-      mimetype: 'audio/mpeg',
-      fileName: 'bot.mp3'
-    }, { quoted: m });
+            if (possibleFiles.length > 0) {
+                const randomFile = possibleFiles[Math.floor(Math.random() * possibleFiles.length)];
+                await client.sendMessage(
+                    m.chat,
+                    {
+                        audio: { url: randomFile },
+                        ptt: true,
+                        mimetype: 'audio/mpeg',
+                        fileName: 'toxic-start.mp3',
+                    },
+                    { quoted: m }
+                );
+            }
+        }
 
-    // Send follow-up text with .repo button
-    const repoText = `◈━━━━━━━━━━━━━━━━◈\n│❒ Hit the button below to view repo, ${m.pushName}! 😈\n◈━━━━━━━━━━━━━━━━◈`;
-    await client.sendMessage(m.chat, {
-      text: repoText,
-      footer: `Venom-X`,
-      buttons: [
-        { buttonId: `${prefix}repo`, buttonText: { displayText: `📖 ${toFancyFont('REPO')}` }, type: 1 }
-      ],
-      headerType: 1,
-      viewOnce: true
-    }, { quoted: m });
+        const settings = await getSettings();  
+        const effectivePrefix = settings.prefix || '.';
 
-  } catch (error) {
-    console.error('Error in bot command:', error);
-    await client.sendMessage(m.chat, {
-      text: `◈━━━━━━━━━━━━━━━━◈\n│❒ Shit went sideways, ${m.pushName}. Can’t send bot.mp3. Try again later, loser. 😒`
-    }, { quoted: m });
-  }
+        const msg = generateWAMessageFromContent(  
+            m.chat,  
+            {  
+                interactiveMessage: {  
+                    body: { 
+                        text: `◈━━━━━━━━━━━━━━━━◈\n│❒ Yo @${m.pushName}! You actually bothered to check if I'm alive? 🙄\n│❒ ${botname} is active 24/7, unlike your brain cells. 🧠⚡\n│❒ Stop wasting my time and pick something useful below.\n◈━━━━━━━━━━━━━━━━◈` 
+                    },  
+                    footer: { text: `> Pσɯҽɾҽԃ Ⴆყ ${botname}` },  
+                    nativeFlowMessage: {  
+                        buttons: [  
+                            {  
+                                name: 'single_select',  
+                                buttonParamsJson: JSON.stringify({  
+                                    title: '𝐖𝐇𝐀𝐓 𝐃𝐎 𝐘𝐎𝐔 𝐖𝐀𝐍𝐓?',  
+                                    sections: [  
+                                        {  
+                                            rows: [  
+                                                { title: '📱 Menu', description: 'Get all commands', id: `${effectivePrefix}menu` },  
+                                                { title: '⚙ Settings', description: 'Bot settings', id: `${effectivePrefix}settings` },  
+                                                { title: '🏓 Ping', description: 'Check bot speed', id: `${effectivePrefix}ping` },  
+                                                { title: '🔄 Update', description: 'Check for updates', id: `${effectivePrefix}update` },  
+                                            ],  
+                                        },  
+                                    ],  
+                                }),  
+                            },  
+                        ],  
+                    },  
+                },  
+            },  
+            { quoted: m }  
+        );  
+
+        await client.relayMessage(m.chat, msg.message, { messageId: msg.key.id });
+    },
 };
