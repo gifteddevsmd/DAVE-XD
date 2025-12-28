@@ -281,7 +281,7 @@ async function startToxic() {
       };
 
       try {
-        require("./toxic")(client, m, { type: "notify" }, store);
+        require("./dave")(client, m, { type: "notify" }, store);
       } catch (error) {
         console.error('Error processing list selection:', error);
       }
