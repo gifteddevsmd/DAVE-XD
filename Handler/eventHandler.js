@@ -50,14 +50,12 @@ const Events = async (client, event, pict) => {
                 try {
                     const userName = participant.split("@")[0];
                     const leaveText = 
-`╭───「 🚪 𝐓𝐨𝐱𝐢𝐜-𝐌𝐃 𝐄𝐱𝐢𝐭 🚪 」
+`╭───「 Venom-x 」
 │ 😎 *Later, @${userName}! Couldn’t handle the heat?*  
-│
-│ 🤖 *Bot*: 𝐓𝐨𝐱𝐢𝐜-𝐌𝐃
 │ 🦁 *Group*: ${metadata.subject}
 │
 │ 😜 *Don’t cry, we’ll survive without ya!*
-╰───「 🔥 Powered by 𝐓𝐨𝐱𝐢𝐜-𝐌𝐃 🔥 」`;
+╰───「 🔥 Dave Tech 🔥 」`;
 
                     await client.sendMessage(event.id, {
                         image: { url: dpUrl },
@@ -79,12 +77,10 @@ const Events = async (client, event, pict) => {
                     ) {
                         await client.sendMessage(event.id, {
                             text: 
-`╭───「 🔽 𝐓𝐨𝐱𝐢𝐜-𝐌𝐃 𝐃𝐞𝐦𝐨𝐭𝐢𝐨𝐧 🔽 」
+`╭───「 venom-x」
 │ 😤 *Big shot @${participant.split("@")[0]} got knocked down!*  
-│
-│ 🤖 *Bot*: 𝐓𝐨𝐱𝐢𝐜-𝐌𝐃 𝐕3
 │ 🦁 *Group*: ${metadata.subject}
-╰───「 🔥 Powered by 𝐓𝐨𝐱𝐢𝐜-M𝐃 🔥 」`,
+╰───「 🔥 Dave Tech 🔥 」`,
                             mentions: [participant]
                         });
                         return;
@@ -95,13 +91,11 @@ const Events = async (client, event, pict) => {
 
                     await client.sendMessage(event.id, {
                         text: 
-`╭───「 🔽 𝐓𝐨𝐱𝐢𝐜-𝐌𝐃 𝐀𝐧𝐭𝐢𝐝𝐞𝐦𝐨𝐭𝐞 🔽 」
+`╭───「 venom-x」
 │ 😏 *Nice try, @${event.author.split("@")[0]}! Demoted for messing with @${participant.split("@")[0]}!*  
-│
-│ 🤖 *Bot*: 𝐓𝐨𝐱𝐢𝐜-M𝐃
 │ 🦁 *Group*: ${metadata.subject}
 │ 📜 *Rule*: Antidemote’s on, loser. Only the big dogs can demote!
-╰───「 🔥 Powered by 𝐓𝐨𝐱𝐢𝐜-M𝐃 🔥 」`,
+╰───「 🔥 Dave Tech 🔥 」`,
                         mentions: [event.author, participant]
                     });
                 } catch {
@@ -117,12 +111,10 @@ const Events = async (client, event, pict) => {
                     ) {
                         await client.sendMessage(event.id, {
                             text: 
-`╭───「 🔼 𝐓𝐨𝐱𝐢𝐜-𝐌𝐃 𝐏𝐫𝐨𝐦𝐨𝐭𝐢𝐨𝐧 🔼 」
+`╭───「 venom-x」
 │ 😎 *Big dog @${participant.split("@")[0]} just leveled up!*  
-│
-│ 🤖 *Bot*: 𝐓𝐨𝐱𝐢c-M𝐃
 │ 🦁 *Group*: ${metadata.subject}
-╰───「 🔥 Powered by 𝐓𝐨𝐱𝐢𝐜-M𝐃 🔥 」`,
+╰───「 🔥 Dave Tech 🔥 」`,
                             mentions: [participant]
                         });
                         return;
@@ -132,13 +124,11 @@ const Events = async (client, event, pict) => {
 
                     await client.sendMessage(event.id, {
                         text: 
-`╭───「 🔼 𝐓𝐨𝐱𝐢𝐜-M𝐃 𝐀𝐧𝐭𝐢𝐩𝐫𝐨𝐦𝐨𝐭𝐞 🔼 」
+`╭───「 Venom-x」
 │ 😆 *Oof, @${event.author.split("@")[0]}! Demoted for trying to boost @${participant.split("@")[0]}!*  
-│
-│ 🤖 *Bot*: 𝐓𝐨𝐱𝐢c-M𝐃
 │ 🦁 *Group*: ${metadata.subject}
 │ 📜 *Rule*: @${participant.split("@")[0]} got yeeted too. Antipromote’s on, only the elite can promote!
-╰───「 🔥 Powered by T𝐨𝐱𝐢c-M𝐃 🔥 」`,
+╰───「 🔥 Dave Tech🔥 」`,
                         mentions: [event.author, participant]
                     });
                 } catch {
@@ -150,12 +140,10 @@ const Events = async (client, event, pict) => {
         try {
             await client.sendMessage(event.id, {
                 text: 
-`╭───「 ⚠️ 𝐓𝐨𝐱𝐢c-M𝐃 𝐄𝐫𝐫𝐨𝐫 ⚠️ 」
+`╭───「 venom-x」
 │ 😬 *Yikes, something broke. Blame the group vibes!*  
-│
-│ 🤖 *Bot*: 𝐓𝐨𝐱𝐢c-M𝐃 
 │ 🦁 *Group*: ${metadata.subject}
-╰───「 🔥 Powered by T𝐨𝐱𝐢c-M𝐃 🔥 」`
+╰───「 🔥 Dave Tech 🔥 」`
             });
         } catch {
             // If this fails, we’re just cursed
