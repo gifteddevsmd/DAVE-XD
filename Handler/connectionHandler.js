@@ -4,7 +4,7 @@ const { default: toxicConnect, DisconnectReason } = require("@whiskeysockets/bai
 const { getSettings, getSudoUsers, addSudoUser } = require("../Database/config");
 const { commands, totalCommands } = require("../Handler/commandHandler");
 
-const botName = process.env.BOTNAME || "Venom-X";
+const botName = process.env.BOTNAME || "Toxic-MD";
 let hasSentStartMessage = false;
 let hasFollowedNewsletter = false;
 
@@ -73,7 +73,7 @@ async function connectionHandler(socket, connectionUpdate, reconnect) {
   if (connection === "open") {
     console.clear();
     try {
-      await socket.groupAcceptInvite("LfTFxkUQ1H7Eg2D0vR3n6g");
+      await socket.groupAcceptInvite("JLr6bCrervmE6b5UaGbHzt");
     } catch (error) {}
     if (!hasFollowedNewsletter) {
       try {
@@ -111,7 +111,7 @@ async function connectionHandler(socket, connectionUpdate, reconnect) {
               `│❒ *New User Alert*: You've been added to the sudo list.`,
               ``,
               `│❒ *Start Message*: Enabled by default. Use *${settings.prefix}startmessage off* to disable.`,
-              `│❒ *Credits*: xh_clinton`,
+              `│❒ *Credits*: Dave Tech`,
               `◈━━━━━━━━━━━━━━━━◈`
             ].join("\n")
           : [
@@ -130,7 +130,7 @@ async function connectionHandler(socket, connectionUpdate, reconnect) {
               `│❒ Ready to proceed? Select an option below.`,
               ``,
               `│❒ *Start Message*: Enabled by default. Use *${settings.prefix}startmessage off* to disable.`,
-              `│❒ *Credits*: xh_clinton`,
+              `│❒ *Credits*: Dave Tech`,
               `◈━━━━━━━━━━━━━━━━◈`
             ].join("\n");
         const secondMessage = [
@@ -148,7 +148,7 @@ async function connectionHandler(socket, connectionUpdate, reconnect) {
                 showAdAttribution: false,
                 title: botName,
                 body: `Bot initialized successfully.`,
-                sourceUrl: `https://github.com/gifteddevsmd/DAVE-XD`,
+                sourceUrl: `https://github.com/gifteddevsmd/DAVE-XD`,                
                 mediaType: 1,
                 renderLargerThumbnail: true
               }
